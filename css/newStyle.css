@@ -1,6 +1,7 @@
 body{
   /*background-color:#ccc;*/
 }
+
 *{
   padding:0;
 }
@@ -19,13 +20,22 @@ body{
   text-align:center;
 }
 .categoryColor{
-  background-color:#ccc;
+  background-color:black;
   height:90px;
   margin-bottom:20px;
   padding:20px;
   cursor:pointer;
   border-radius:2px;
+  color:white;
 }
+.itemsImage{
+  width: 30px;
+    height: 30px;
+    float: right;
+    /* line-height: 1.5; */
+    /* vertical-align: baseline; */
+    margin-top: 12px;
+  }
 .itemsText{
   text-align: left;
   font-size: 35px;
