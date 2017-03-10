@@ -17,6 +17,7 @@
 	padding-left: 10px;
 	padding-bottom: 40px;
 	padding-top: 20px;
+	height:220px;
 }
 
 @media (max-width: 320px) {
@@ -100,6 +101,7 @@
 		padding-top: 20px;
 		margin-bottom: 5px;
 		cursor:pointer;
+		height:220px;
 	}
 	.image-url {
 		width: 360px;
@@ -124,7 +126,8 @@
 		padding-left: 10px;
 		padding-bottom: 10px;
 		padding-top: 20px;
-		cursor:pointer;
+		cursor:pointer
+		height:220px;
 	}
 }
 
@@ -137,6 +140,7 @@
 		border-radius: 5px;
 		margin-bottom: 5px;
 		cursor:pointer;
+		height:220px;
 	}
 }
 
@@ -146,6 +150,7 @@
 		float: left;
 		border-radius: 5px;
 		cursor:pointer;
+		height:220px;
 	}
 }
 @media (min-width: 768px)
