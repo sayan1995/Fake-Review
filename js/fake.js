@@ -1,6 +1,6 @@
 registered=0;
 selectedItems=0;
-function droplr(category)
+function fake(category)
 {
 	var i=0,list=[];
 	var k=this.load;
@@ -35,7 +35,7 @@ function droplr(category)
 			//console.log(u);
 
 }
-droplr.prototype.load =function (list1) {
+fake.prototype.load =function (list1) {
 	//format of data-JSON
 	//[filelist:[url:,name,time]]
 	//time would usually consist of a timestap in GMT and we would need to convert this to the difference between current time
@@ -44,7 +44,6 @@ droplr.prototype.load =function (list1) {
 		$('.display-area').text('');
 	console.log(data);
 	var i = 0;
-
 var fillcards = setInterval(function () {
 
 	var length = data.length-1;
@@ -52,12 +51,11 @@ var fillcards = setInterval(function () {
 	$(p).addClass('col-lg-15');
 	$(p).addClass('col-sm-15');
 	$(p).addClass('col-xs-15');
-
-	var card = ['<div id = "card-' + i+1 + '">\
-				<img class="image-url block-inline" src="' + data[i].url + '">\
-				<div class="break"></div>\
-				<div class="image-name">' + data[i].name + '</div>\
-				</div>'];
+		var card = ['<div id = "card-' + i + '"><a href="./summaryGeneration.html">\
+					<center><img class="image-url block-inline" src="' + data[i].url + '"></center>\
+					<div class="break"></div>\
+					<b class="image-name">' + data[i].name + '</b>\
+					</a></div>'];
 	//alert(card);
 	i++;
 	$(p).append(card);
@@ -113,9 +111,9 @@ function waitTime  () {
 	return defer.promise();
 }
 
-droplr.prototype.generate =function (url, name, div, i) {
+fake.prototype.generate =function (url, name, div, i) {
 
-	var card = ['<div id = "card-' + i + '"><a href="./rfid.html">\
+	var card = ['<div id = "card-' + i + '"><a href="./summaryGeneration.html">\
 				<center><img class="image-url block-inline" src="' + url + '"></center>\
 				<div class="break"></div>\
 				<b class="image-name">' + name + '</b>\
@@ -126,7 +124,7 @@ droplr.prototype.generate =function (url, name, div, i) {
 
 function init(category="Automotive")
 {
-	new droplr(category);
+	new fake(category);
 	if(registered==0)
 	registerEvents();
 	registered++;
