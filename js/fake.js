@@ -5,45 +5,70 @@ function fake(category)
 	var i=0,list=[];
 	var k=this.load;
 	var _this=this;
-	jQuery.get('../search/'+category+'.txt').done(function(data) {
-		p1=[];
-		p1=data.split('\n');
-
-
-		var currIndex = 0,index = 0;
-    var listOfAuto = ['../images/automotives1.jpg', '../images/automotives2.jpg', '../images/automotives3.jpg', '../images/automotives4.jpg','../images/automotives5.jpg','../images/automotives6.jpg','../images/automotives7.jpg','../images/automotives8.jpg','../images/automotives9.jpg','../images/automotives10.jpg'];
-		var listOfClo = ['../images/c1.jpg', '../images/c2.jpg', '../images/c3.jpg', '../images/c4.jpg','../images/c5.jpg','../images/c6.jpg','../images/c7.jpg',];
-		var listOfCell = ['../images/p1.jpg', '../images/p2.jpg', '../images/p3.jpg', '../images/p4.jpg','../images/p5.jpg','../images/p6.jpg','../images/p7.jpg','../images/p8.jpg','../images/p9.jpg','../images/p10.jpg'];
-
-
-    //console.log(listOfColors[currIndex])
-		for(i=0;i<p1.length;i++)
-		{
-			if (index >= 5) {
-					index = index % 5;
-
-			}
-			var url='';
-			if(category=="CellPhones")
+		$('.display-area').text('');
+			for(i=0;i<7;i++)
 			{
-				url=listOfCell[index];
+				var p2 = $('<div/>').attr('class', 'col-md-15');
+				$(p2).addClass('col-lg-15');
+				$(p2).addClass('col-sm-15');
+				$(p2).addClass('col-xs-15');
+					var card = ['<div id = "card"><a href="./summaryGeneration.html">\
+								<center><img class="block-inline  bor shimmer" src="" ></center>\
+								<div class="break"></div>\
+								<b class="image-name size shimmer"></b>\
+								</a></div><br><br>'];
+				$(p2).append(card);
+				$('.display-area').append(p2);
 			}
-			else if(category=="Automotive")
-			{
-				url=listOfAuto[index];
-			}
-			else {
-				url=listOfClo[index];
-			}
-			list.push({'url':url,'name':p1[i]});
-			index++;
+			var pause=0;
+
+	var fillcards=setInterval(function () {
+		pause++;
+		if (pause == 1) {
+			jQuery.get('../search/'+category+'.txt').done(function(data) {
+				p1=[];
+				p1=data.split('\n');
+
+
+				var currIndex = 0,index = 0;
+		    var listOfAuto = ['../images/automotives1.jpg', '../images/automotives2.jpg', '../images/automotives3.jpg', '../images/automotives4.jpg','../images/automotives5.jpg','../images/automotives6.jpg','../images/automotives7.jpg','../images/automotives8.jpg','../images/automotives9.jpg','../images/automotives10.jpg'];
+				var listOfClo = ['../images/c1.jpg', '../images/c2.jpg', '../images/c3.jpg', '../images/c4.jpg','../images/c5.jpg','../images/c6.jpg','../images/c7.jpg',];
+				var listOfCell = ['../images/p1.jpg', '../images/p2.jpg', '../images/p3.jpg', '../images/p4.jpg','../images/p5.jpg','../images/p6.jpg','../images/p7.jpg','../images/p8.jpg','../images/p9.jpg','../images/p10.jpg'];
+
+
+		    //console.log(listOfColors[currIndex])
+				for(i=0;i<p1.length;i++)
+				{
+					if (index >= 5) {
+							index = index % 5;
+
+					}
+					var url='';
+					if(category=="CellPhones")
+					{
+						url=listOfCell[index];
+					}
+					else if(category=="Automotive")
+					{
+						url=listOfAuto[index];
+					}
+					else {
+						url=listOfClo[index];
+					}
+					list.push({'url':url,'name':p1[i]});
+					index++;
+				}
+				_this.data = list;
+				//console.log(_this.data[0].length);
+				_this.len = _this.data.length;
+
+				k(list);
+			});
+
+
+			clearInterval(fillcards);
 		}
-		_this.data = list;
-		//console.log(_this.data[0].length);
-		_this.len = _this.data.length;
-		k(list);
-	});
-
+	},1500)
 
 
 	/*u='[\

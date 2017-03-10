@@ -17,7 +17,7 @@
   </head>
   <script>
   </script>
-  <body onload="init()" style="background:url('../images/bg3'); background-repeat: no-repeat; ">
+  <body onload="init()" style="background:url('../images/bg1.png'); background-repeat: no-repeat;">
     <div class="navbar navbar-static navbar-default navbar-fixed-top">
   		<div class="container-fluid">
   			<div class="navbar-header">
@@ -82,23 +82,24 @@
       </ul>
     </div>
     <div class="main col-sm-12 col-xs-12 col-md-12 " id="globalCntr">
-      <div class="page-header domain">
-              <h2>Choose Method Of Summary Generation</h2>
+      <div class="" style="text-align:center;padding-bottom:300px;color:white">
+              <h2>Choose Option</h2>
       </div>
       <div class="SummarySelections">
-        <div class="col-md-offset-3 col-md-5 col-xs-12"  data-toggle="modal" data-target="#rankTextModal">
+        <div class="col-md-offset-3 col-md-5 col-xs-12" >
           <div class="textRank categoryColor">
+            <a href="./index.html">
               <div class="itemsText">
-                Text Rank  <img class="itemsImage"src="../images/rightArrow.png"/>
+                Product Summary  <img class="itemsImage"src="../images/rightArrow.png"/>
               </div>
-
+            </a>
           </div>
         </div>
         <br>
-        <div class="col-md-offset-3 col-md-5 col-xs-12" data-toggle="modal" data-target="#rfidModal">
+        <div class="col-md-offset-3 col-md-5 col-xs-12">
           <div class="rfid categoryColor">
               <div class="itemsText">
-                TFID   <img class="itemsImage"src="../images/rightArrow.png"/>
+                Fake Review Classification   <img class="itemsImage"src="../images/rightArrow.png"/>
               </div>
           </div>
         </div>
@@ -115,51 +116,3 @@
 
   </body>
 </html>
-
-
-
-
-<div class="modal fade" id="rankTextModal">
-<div class="modal-dialog">
-<div class="modal-content">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title">Text Rank</h4>
-  </div>
-  <div class="modal-body">
-    <p>Do you want to enable debugging?</p>
-    <input type="checkbox"/>&nbspYes
-    <input type="checkbox"/>&nbspNo
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-default"><a href="textRanking.html">Proceed</a></button>
-  </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-
-<div class="modal fade" id="rfidModal">
-<div class="modal-dialog">
-<div class="modal-content">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title">TFID</h4>
-  </div>
-  <div class="modal-body">
-    <p>Do you want to enable debugging?</p>
-    <input type="checkbox"/>&nbspYes
-    <input type="checkbox"/>&nbspNo
-    <br>
-    <label>Input Gram size</label>
-    <input type="number" class="gramSelect"/>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-default"><a href="./tfid.html">Proceed</a></button>
-  </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
